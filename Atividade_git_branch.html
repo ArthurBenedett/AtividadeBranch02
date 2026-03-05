@@ -1,83 +1,152 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Dashboard - Ciência de Dados</title>
-    <style>
-        /* CSS BASE - ESTE É O BLOCO QUE ELES VÃO ALTERAR NA BRANCH */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url(00085858.jpg);
-            background-position: relative;
-            background-repeat: no-repeat;
-            color: #333;               /* Cor para alterar no modo noturno */
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Dashboard - Ciência de Dados</title>
 
-        .dashboard-container {
-            background-color: white; /* Cor para alterar no modo noturno */
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
+<style>
 
-        h1 {
-            color: #ff2c2c;
-            margin-bottom: 20px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-        .card {
-            background: #e9ecef;
-            padding: 15px;
-            border-radius: 8px;
-        }
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("Brasao_do_Sao_Paulo_Futebol_Clube.png");
 
-        .card-value {
-            font-size: 24px;
-            font-weight: bold;
-            display: block;
-        }
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-        .card-label {
-            font-size: 14px;
-            color: #666;
-        }
-    </style>
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+
+    color:#fff;
+}
+
+/* CONTAINER */
+
+.dashboard-container{
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    background: rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:16px;
+
+    padding:40px;
+    max-width:520px;
+    width:90%;
+
+    box-shadow:0 10px 35px rgba(0,0,0,0.4);
+
+    text-align:center;
+}
+
+/* TITULO */
+
+h1{
+    font-size:28px;
+    margin-bottom:30px;
+
+    background:linear-gradient(90deg,#ff2c2c,#ffffff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* GRID */
+
+.metrics-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+/* CARDS */
+
+.card{
+    background:rgba(255,255,255,0.12);
+    padding:20px;
+    border-radius:12px;
+
+    transition:0.25s;
+
+    border:1px solid rgba(255,255,255,0.15);
+}
+
+.card:hover{
+    transform:translateY(-5px) scale(1.03);
+    background:rgba(255,255,255,0.2);
+}
+
+/* VALOR */
+
+.card-value{
+    font-size:28px;
+    font-weight:700;
+    display:block;
+    margin-bottom:5px;
+}
+
+/* LABEL */
+
+.card-label{
+    font-size:14px;
+    opacity:0.8;
+}
+
+/* STATUS */
+
+.server-status{
+    margin-top:30px;
+    font-size:13px;
+    opacity:0.9;
+}
+
+.online{
+    color:#00ff88;
+    font-weight:bold;
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <div class="dashboard-container">
-        <h1>Dashboard Analítico</h1>
-        
-        <div class="metrics-grid">
-            <div class="card">
-                <span class="card-value">94.2%</span>
-                <span class="card-label">Acurácia</span>
-            </div>
-            <div class="card">
-                <span class="card-value">1.2s</span>
-                <span class="card-label">Latência</span>
-            </div>
-        </div>
+<div class="dashboard-container">
 
-        <p style="margin-top: 25px; font-size: 12px; color: #999;">
-            Status do Servidor: <span style="color: green;">● Online</span>
-        </p>
-    </div>
+<h1>📊 Dashboard Analítico</h1>
+
+<div class="metrics-grid">
+
+<div class="card">
+<span class="card-value">94.2%</span>
+<span class="card-label">Acurácia</span>
+</div>
+
+<div class="card">
+<span class="card-value">1.2s</span>
+<span class="card-label">Latência</span>
+</div>
+
+</div>
+
+<p class="server-status">
+Status do Servidor: <span class="online">● Online</span>
+</p>
+
+</div>
 
 </body>
 </html>
