@@ -1,91 +1,238 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Dashboard - Ciência de Dados</title>
-    <style>
-        /* CSS BASE - ESTE É O BLOCO QUE ELES VÃO ALTERAR NA BRANCH */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url(00085858.jpg);
-            background-position: relative;
-            background-repeat: no-repeat;
-            color: #333;               /* Cor para alterar no modo noturno */
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .dashboard-container {
-            background-color: white; /* Cor para alterar no modo noturno */
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
+<title>Data Dashboard - Ciência de Dados</title>
 
-        h1 {
-            color: #ff2c2c;
-            margin-bottom: 20px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+<style>
 
-        .card {
-            background: #e9ecef;
-            padding: 15px;
-            border-radius: 8px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-        .card-value {
-            font-size: 24px;
-            font-weight: bold;
-            display: block;
-        }
+body{
 
-        .card-label {
-            font-size: 14px;
-            color: #666;
-        }
-    </style>
+font-family:'Inter',sans-serif;
+
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url("00085858.jpg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+color:white;
+
+}
+
+/* CONTAINER */
+
+.dashboard-container{
+
+width:95%;
+max-width:850px;
+
+padding:40px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,0.08);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 15px 40px rgba(0,0,0,0.45);
+
+}
+
+/* HEADER */
+
+.header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.title{
+
+font-size:28px;
+font-weight:700;
+
+background:linear-gradient(90deg,#ff2c2c,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+/* STATUS */
+
+.status{
+
+font-size:13px;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+background:rgba(0,255,150,0.15);
+
+color:#00ff9d;
+
+border:1px solid rgba(0,255,150,0.3);
+
+}
+
+/* GRID */
+
+.metrics-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+/* CARDS */
+
+.card{
+
+background:rgba(255,255,255,0.12);
+
+padding:22px;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,0.18);
+
+transition:0.25s ease;
+
+text-align:center;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px) scale(1.03);
+
+background:rgba(255,255,255,0.18);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
+
+}
+
+/* VALUE */
+
+.card-value{
+
+font-size:32px;
+
+font-weight:700;
+
+margin-bottom:5px;
+
+display:block;
+
+}
+
+/* LABEL */
+
+.card-label{
+
+font-size:14px;
+
+opacity:0.85;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+margin-top:30px;
+
+font-size:12px;
+
+opacity:0.7;
+
+text-align:center;
+
+}
+
+@media(max-width:600px){
+
+.metrics-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <div class="dashboard-container">
-        <h1>Dashboard Analítico</h1>
-        
-        <div class="metrics-grid">
-            <div class="card">
-                <span class="card-value">94.2%</span>
-                <span class="card-label">Acurácia</span>
-            </div>
-            <div class="card">
-                <span class="card-value">1.2s</span>
-                <span class="card-label">Latência</span>
-            </div>
-            <div class="card">
-                <span class="card-value">20%</span>
-                <span class="card-label">Total</span>
-            </div>
-             <div class="card">
-                <span class="card-value">1.8s</span>
-                <span class="card-label">Sei la</span>
-            </div>
-        </div>
+<div class="dashboard-container">
 
-        <p style="margin-top: 25px; font-size: 12px; color: #999;">
-            Status do Servidor: <span style="color: green;">● Online</span>
-        </p>
-    </div>
+<div class="header">
+
+<div class="title">📊 Dashboard Analítico</div>
+
+<div class="status">● Servidor Online</div>
+
+</div>
+
+<div class="metrics-grid">
+
+<div class="card">
+<span class="card-value">94.2%</span>
+<span class="card-label">Acurácia do Modelo</span>
+</div>
+
+<div class="card">
+<span class="card-value">1.2s</span>
+<span class="card-label">Latência Média</span>
+</div>
+
+<div class="card">
+<span class="card-value">20%</span>
+<span class="card-label">Taxa de Conversão</span>
+</div>
+
+<div class="card">
+<span class="card-value">1.8s</span>
+<span class="card-label">Tempo de Resposta</span>
+</div>
+
+</div>
+
+<div class="footer">
+Atualizado em tempo real • Sistema de Monitoramento de Dados
+</div>
+
+</div>
 
 </body>
 </html>
